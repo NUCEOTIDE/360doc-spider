@@ -1,0 +1,447 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+        if (window.location.toString().indexOf("shtml?") > 0) {
+            self.location = window.location.toString().replace(window.location.search.toString(), "");
+        }
+        function doccheckart(json) {
+            if (json[0].result == "1") {
+                self.location = "http://www.360doc.com/noarticle.aspx";
+            }
+        }
+    </script>
+<script src="/js/jquery1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+        var patt1 = new RegExp("[0-9]*_[0-9]*");
+        var url = patt1.exec(location.href);
+        if (navigator.userAgent.toLowerCase().indexOf("micromessenger") > -1) {
+            window.location.href = "http://www.360doc26.net/wxarticlenew/" + url.toString().split("_")[1] + ".html";
+                        
+        }
+        else if (navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("Android") > 0 || navigator.userAgent.indexOf("iPod") > 0) {  //手机端跳转
+
+            if (url != "") {
+                self.location = "http://www.360doc.cn/article/" + url + ".html";
+            }
+        }
+        if ( 659271925 !=  659271925) {
+            
+            $.ajax({
+            url: "http://www.360doc.com/ajax/getuserid.ashx",
+            cache: false,
+            dataType: "json",
+            success: function (result) {
+                
+                if (19119980 != result.userid) { 
+                    
+                        self.location = "http://www.360doc.com/content/17/0602/13/19119980_659271925.shtml";
+        }
+        }
+        });}
+        
+
+        if ( 0 !=  659271925&&0!=""&&0!="0") {
+           $.ajax({
+            url: "http://www.360doc.com/ajax/getuserid.ashx",
+            cache: false,
+            dataType: "json",
+            success: function (result) {
+                   if (19119980 != result.userid) { 
+                       self.location = "";
+        }
+        }
+        });}
+        </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta content="360doc" name="classification" /><link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/19119980_659271925.html"/><meta content="scrapy,excel,selector" name=keywords><meta content="Python学习 爬虫获取数据并放到excel" name=description><meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/19119980_659271925.html"/><meta content="python 爬虫 excel 安装scrapy" name=360docabstract><meta content="www.360doc.com" name="author" /><title>
+Python学习 爬虫获取数据并放到excel
+</title>
+<script src="/js/showarticlefollow20160329.js?t=2018060602" type="text/javascript" charset="utf-8"></script>
+<script src="http://www.360doc.com/js/jQuery.md5.min.js?t=2016041501" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?d86954201130d615136257dde062a503";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" type="text/css" href="http://css.360doc.com/wzhead-cleaned.css?t=2016011601" /><link rel="stylesheet" type="text/css" href="http://css.360doc.com/newArticle20160509.css?t=2018062001" />
+<script type="text/javascript" language="javascript">
+        window.onerror = ignoreError;
+        function ignoreError() {
+            return true;
+        }
+    </script>
+<link href="http://css.360doc.com/index7/newheader.css?t=2016123003" rel="stylesheet" type="text/css" /></head>
+<body onmouseup="setDragEnd()" onclick="delAllDiv(event)">
+<span id="LayerLogin"></span>
+<div style="position: fixed; width: 100%; z-index: 1000;">
+<div class="header" style="background-color: #ffffff;">
+<div class="header_1">
+<a href="http://www.360doc.com/index.html">
+<img src="http://pubimage.360doc.com/index7/nlogo.jpg" class="f_left" /></a>
+<div class="mylibrary">
+<a id="userInfoUrl" href="http://www.360doc.com/my360doc.aspx" class="a1">
+<div class="h_user">
+<img id="divuserinfonew" src="http://pubimage.360doc.com/index7/dingtu.gif" /><span></span>
+</div>
+我的图书馆
+</a>
+<ul class="hm_list hm_account" style="display: none;">
+<li><a href="http://www.360doc.com/myindex.aspx">首页</a></li>
+<li><a href="http://www.360doc.com/myfiles.aspx?app=1&type=3">馆藏</a></li>
+<li><a href="http://www.360doc.com/myreadroom.aspx">阅览室</a></li>
+<li><a href="http://www.360doc.com/mystudy.aspx">学习圈</a></li>
+<li><a href="http://www.360doc.com/mycontacts.aspx">通讯录</a></li>
+<li><a href="javascript:void(0);" onclick="displaylogin();">退出帐号</a></li>
+</ul>
+</div>
+<div class="headmail f_left" style="display: none;">
+<p class="h_icon1" id="newMsg"></p>
+<span class="h_border"></span>
+<ul class="hm_list" id="msgtips">
+<li id="msgicon"><a href="/mymsg.aspx?app=2">查看信箱</a></li>
+<li id="sysmsgicon"><a href="/mymsg.aspx?app=9">系统消息</a></li>
+<li id="sysicon"><a href="/mymsg.aspx?app=4">官方通知</a></li>
+<li class="hm_color2" style="background-color: #f4f4f4"><a href="/mymsg.aspx?app=6">设置</a></li>
+</ul>
+</div>
+<div class="headtalker f_left" style="display: none;">
+<p class="h_icon1" id="newDialog"></p>
+<span class="h_border"></span>
+<ul class="hm_list">
+<li id="li1chat"><a href="javascript:void(0)" onclick="initchatnew()">开始对话</a></li>
+<li id="li2chat" style="display: none;"><a href="javascript:void(0)" style="color: #141414;">有<span>11</span>人和你对话，<span onclick="initchatnew()" style="color: #4578b4">查看</span>&nbsp;<span onclick="clearinfochat()" style="color: #4578b4">忽略</span></a></li>
+<li><a href="http://www.360doc.com/mycontacts.aspx?app=8">历史对话记录</a></li>
+<li class="hm_color2" style="background-color: #f4f4f4"><a href="http://www.360doc.com/mycontacts.aspx?app=7">通知设置</a></li>
+</ul>
+</div>
+<a href="http://www.360doc.com/advice.html" target="_blank" class="head_talk f_right">留言交流</a>
+<div class="headsearch f_right">
+<div class="zcomdiv">
+<input type="text" class="headsearch_inp f_left" value="搜文章 找馆友" />
+<span class="headsearch_btn f_right" id="searchlinkid"></span>
+</div>
+<div class="headsearch_select">
+<p class="hs_title">请选择搜索范围</p>
+<a href="javascript:goSearch();" class="cur">含&nbsp;<span></span>&nbsp;的文章</a>
+<a href="javascript:goSearch();">昵称为&nbsp;<span></span>&nbsp;的馆友</a>
+<a href="javascript:goSearch();">兴趣为&nbsp;<span></span>&nbsp;的馆友</a>
+</div>
+</div>
+</div>
+</div>
+<div class="arti_type_shadow"></div>
+</div>
+<div style="height: 68px; _height: 0px; width: 100%;"></div>
+<div class="clear360doc"></div>
+<div class="doc360article_content">
+<div style="height: 90px; padding-top: 13px;">
+<script async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script><ins class='adsbygoogle' style='display: inline-block; width: 970px; height: 90px' data-ad-client='ca-pub-6625678643128649' data-ad-slot='2709112222'></ins><script> (adsbygoogle = window.adsbygoogle || []).push({ }); </script>
+</div>
+<p class="clearboth"></p>
+<div class="a_left">
+<div id="bgchange">
+<div class="fontsize_bgcolor_controler">
+<div class="a_bgcolor">
+<img src="http://pubimage.360doc.com/NewArticle/bgcolor.jpg" />
+<div class="a_colorlist">
+<span class="a_color1" onclick="artStatistics('20-11-1');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+<span class="a_color2" onclick="artStatistics('20-11-2');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+<span class="a_color3" onclick="artStatistics('20-11-3');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+<span class="a_color4" onclick="artStatistics('20-11-4');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+<span class="a_color5" onclick="artStatistics('20-11-5');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+<span class="a_color6 cur" onclick="artStatistics('20-11-6');">
+<img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+</div>
+</div>
+<div class="a_fontsize">
+<img src="http://pubimage.360doc.com/NewArticle/fontSize.jpg" />
+<div class="fschange">
+<label>
+<input type="radio" name="font_Size" id="" value="18" onclick="artStatistics('20-10-1');" />大
+</label>
+&nbsp;
+<label>
+<input type="radio" name="font_Size" id="" value="16" onclick="artStatistics('20-10-2');" />中
+</label>
+&nbsp;
+<label>
+<input type="radio" name="font_Size" id="" value="14" onclick="artStatistics('20-10-3');" />小
+</label>
+</div>
+</div>
+</div>
+<h2 id="titiletext">Python学习 爬虫获取数据并放到excel</h2>
+<div class="article_data">
+<div class="article_data_left">
+2017-06-02
+<span class="a_username">&nbsp;<a href="http://www.360doc.com/userhome/19119980" id="savernickname" target="_blank" onclick="artStatistics(&#39;20-7-1&#39;);">玄冰优</a>
+</span>
+<span id="articleinfo">
+<span id="docsource" class="a_from"></span><span id="360doc_Readnum"></span><span id="360docResaveCount"><span onclick="ShowSaverUser();artStatistics('20-13');" id="360doc_saverNum" style="cursor: pointer;"></span>
+<span id="360doc_saverUser">
+<div style="position: absolute; height: 305px; width: 144px; left: 0px; z-index: 2;" id="sameArtOuter">
+<div onclick="event.cancelBubble=true;" style="overflow-y: auto; height: 300px; overflow-x: hidden; z-index: 100; right: 0px; margin-top: -10px;" id="sameArt">
+</div>
+</div>
+</span>
+</span>
+</span>
+</div>
+<div id="resavelayer1" class="bdsharebuttonbox article_data_right">
+</div>
+</div>
+<div id="articlecontent" class="article_container" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event);">
+<table>
+<tbody>
+<tr>
+<td id="artContent" width="656">
+<div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+<br>因为部分数据的需求，爬取数据，并放到excel中保存。<br><br>先上 python 代码。<br>=========<br>#--coding:utf-8--&nbsp; <br><br>import scrapy<br><br>from tutorial.items import DmozItem<br>from scrapy.http import Request<br>from scrapy.selector import Selector<br>import xlsxwriter<br><br>class DmozSpider(scrapy.Spider):<br>&nbsp;&nbsp;&nbsp; name = "dmoz"<br>&nbsp;&nbsp;&nbsp; allowed_domains = ["dmoz.org"]<br>&nbsp;&nbsp;&nbsp; start_urls = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "https://movie.douban.com/top250"<br>&nbsp;&nbsp;&nbsp; ]<br>&nbsp;&nbsp;&nbsp; tag_name = [u'电影名称',u'电影信息',u'电影评分',u'电影名句']<br>&nbsp;&nbsp;&nbsp; d= []<br>&nbsp;&nbsp;&nbsp; def parse(self, response):<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selector = Selector(response)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Movies = selector.xpath('//div[@class="info"]')<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for eachMoive in Movies:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #print 11<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item = {}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title = eachMoive.xpath('div[@class="hd"]/a/span/text()').extract()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fullTitle = title[0]<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; movieInfo = eachMoive.xpath('div[@class="bd"]/p/text()').extract()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; star = eachMoive.xpath('./div[@class="bd"]/div[@class="star"]/span[@class="rating_num"]/text()').extract()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if star:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; star = star[0]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; star = ''<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quote = eachMoive.xpath('div[@class="bd"]/p[@class="quote"]/span/text()').extract()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #quote可能为空，因此需要先进行判断<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if quote:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quote = quote[0]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quote = ''<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item['title'] = fullTitle<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item['movieInfo'] = ';'.join(movieInfo)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item['star'] = star<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item['quote'] = quote<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self.d.append(item)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; save_excel(self.d,self.tag_name)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextLink = selector.xpath('//span[@class="next"]/link/@href').extract()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #第10页是最后一页，没有下一页的链接<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if nextLink:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextLink = nextLink[0]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; request = Request(url="https://movie.douban.com/top250" + nextLink,callback=self.parse,dont_filter=True)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; yield request<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; save_excel(self.d,self.tag_name)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>#写入excel<br><font color="#0000ff">def save_excel(fin_result, tag_name): # 将抓取到的招聘信息存储到excel当中</font><br>&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; book = xlsxwriter.Workbook(r'/Users/abc/Desktop/testresult.xls') # 默认存储在桌面上<br>&nbsp;&nbsp;&nbsp; tmp = book.add_worksheet()<br>&nbsp;&nbsp;&nbsp; row_num = len(fin_result)<br>&nbsp;&nbsp;&nbsp; print "&gt;&gt;&gt;&gt;length",row_num<br><br>&nbsp;&nbsp;&nbsp; for i in range(1, row_num+2):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if i == 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag_pos = 'A%s' % i<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp.write_row(tag_pos, tag_name)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; con_pos = 'A%s' % i<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content = fin_result[i-2] # -1是因为被表格的表头所占<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp.write_row(con_pos, [content['title'],content['movieInfo'],content['star'],content['quote']])<br><br>&nbsp;&nbsp;&nbsp; book.close()<br>&nbsp;&nbsp; <br><br>===============<br>说明<br><font color="#0000ff"><span style="background-color: Transparent;">#--coding:utf-8--&nbsp;&nbsp;&nbsp;</span></font> <br>编码中文<br><font color="#0000ff">import xlsxwriter</font><br>引入框架 导出excel<br><br>写入excel的for循环的时候，要考虑，excel是从1开始的列，然后，数据要全部写入。<br><br>~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~<br>关于MAC安装Python和Scrapy<br><br>首先mac自带python，并且是很多的插件都安装好了。<br><br>安装scrapy是需要一些指令的。<br><pre><code>sudo pip <span>install</span> Scrapy<br>但是往往会报错。<br>经过查找，具体方法是<br><br>若你的Mac OS系统为10.11或更高版本：<br><br>重新启动Mac OS<br>重启时按住Command+R，进入Recovery模式<br>在Recovery模式中输入: <br>csrutil disable;<br>重新启动，回到Mac OS<br><br>安装Scrapy<br><br>sudo -H pip install Scrapy<br><br></code></pre><font color="#0000ff">总之，会遇到各种的问题，然后只能是百度和google来一步一步的解决相关问题。<br><br>cd 一个文件夹<br>新建<br>scrapy startproject testScrapy<br></font><br><div>&nbsp;</div><div><img src="http://userimage8.360doc.com/17/0726/17/19119980_201707261736260346473521.png"></div><div>&nbsp;</div><br><br><br><br>开始玩耍<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</td>
+<script>
+                                    var html = document.getElementById("artContent").innerHTML;
+                                    document.getElementById("artContent").innerHTML = html;
+
+                                </script>
+</tr>
+</tbody>
+</table>
+<div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none; margin: 0 auto;">
+</div>
+</div>
+<table>
+<tbody>
+<tr>
+<td>
+<ul></ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div></div>
+<span></span>
+<a></a>
+<p style="margin: 0; padding: 0;"></p>
+<p class="clearboth"></p>
+<div id="divreward" style="display: none;"></div>
+<div class="bdsharebuttonbox bottombtn" style="margin-top: 33px;">
+<div class="zcommond" style="overflow: visible;">
+<a href="javascript:void(0);" class="btn_collect" onclick="SaveArt();artStatistics('20-3-2');">转藏到我的图书馆</a>
+<a id="flowimg3" href="javascript:void(0);" class="btn_good" onclick="Showflowerlayer('sendedLayer1');">献花（<span id="articleflowernum">0</span>）
+<span id="flowernumadd" style="display: none;">+1</span>
+</a>
+<span class="span1 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);artStatistics('20-8-3');" onmouseover="this.style.color='#0f659c'" onmouseout="this.style.color=''">分享：</span>
+<a class="sharewx f_left" href="javascript:void(0);" onclick="shareWeixin();artStatistics('20-8-6');">微信</a>
+<div class="s2 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);artStatistics('20-8-4');"><span></span></div>
+</div>
+<div class="sharelist_new" id="fenxiangLayer2">
+<a class="slbg1" href="javascript:void(0);" data-cmd="qzone" onclick="artStatistics('20-8-8');">QQ空间</a>
+<a class="slbg2" href="javascript:void(0);" data-cmd="sqq" onclick="artStatistics('20-8-10');">QQ好友</a>
+<a class="slbg3" href="javascript:void(0);" data-cmd="tsina" onclick="artStatistics('20-8-12');">新浪微博</a>
+<a class="slbg5" href="javascript:void(0);" onclick="showdivemail1();artStatistics('20-8-16');">推荐给朋友</a>
+</div>
+</div>
+<div class="bottom_controler">
+<p class="bottom_cleft">
+来自：
+<span class="a_username" style="width: auto;">
+<a href="http://www.360doc.com/userhome/19119980" id="savernickname2" target="_blank" onclick="artStatistics(&#39;20-7-2&#39;);">玄冰优</a>
+</span>
+&gt;
+<span id="cname" class="a_from"><a href='http://www.360doc.com/userhome.aspx?userid=19119980&cid=18' target='_blank' onclick='artStatistics("20-6");'>《Python》</a></span>
+</p>
+<div class="bottom_cright">
+<a href=" https://www.baidu.com/s?wd=scrapy+excel+selector&tn=SE_hldp01010_6r0gix1f" target="_blank" class="a1" onclick="artStatistics('20-19');">以文找文</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="javascript:void(0);" class="a2" onclick="showAlertLayer1();artStatistics('20-18');">举报</a>
+</div>
+</div>
+<div class="prev_next">
+<p id="lastart" class="p1">
+</p>
+<p id="nextart" class="p2">
+</p>
+</div>
+</div>
+<p class="clearboth"></p>
+<div style="width: 676px; float: left;">
+<div class="str_border" style="border: none; position: relative; z-index: 2;">
+<strong>猜你喜欢</strong>
+</div>
+<ul class="youlike" style="margin-top: -18px; position: relative; z-index: 1;">
+<div style="width: 676px; height: 280px; border: 0;" id="divyoulikead">
+</div>
+</ul>
+<div class="zcommond" style="padding: 10px 0 5px;">
+<div class="bottom_article f_left">
+<div class="str_border">
+<strong>类似文章</strong>
+<a href=http://www.360doc.com/relevant/659271925_more.shtml target='_blank' class='a_more f_right' onclick='artStatistics("20-9-8");'>更多</a>
+</div>
+<ul class="barticle_list">
+<li><span><a href=http://www.360doc.com/content/15/0414/20/12067640_463223209.shtml target=_blank onclick='artStatistics("20-9-7");'>零基础写python爬虫之使用Scrapy框架编写...</a></span></li>
+<li><span><a href=http://www.360doc.com/content/17/0502/00/42308479_650184167.shtml target=_blank onclick='artStatistics("20-9-7");'>python框架教程：scrapy框架之xpath语法...</a></span></li>
+<li><span><a href=http://www.360doc.com/content/16/1204/21/7863900_611897174.shtml target=_blank onclick='artStatistics("20-9-7");'>三步走，教你定制自己的个性python爬虫，...</a></span></li>
+<li><span><a href=http://www.360doc.com/content/15/1110/15/26983278_512146118.shtml target=_blank onclick='artStatistics("20-9-7");'>selenium2.0关于python的常用函数</a></span></li>
+<li><span><a href=http://www.360doc.com/content/15/0910/16/26983278_498259285.shtml target=_blank onclick='artStatistics("20-9-7");'>post请求传大串字符串</a></span></li>
+<li><span><a href=http://www.360doc.com/content/15/0910/15/26983278_498242059.shtml target=_blank onclick='artStatistics("20-9-7");'>js生成页面处理方法（2）</a></span></li>
+<li><span><a href=http://www.360doc.com/content/16/1210/00/31913486_613432021.shtml target=_blank onclick='artStatistics("20-9-7");'>极简单之爬虫入门</a></span></li>
+<li><span><a href=http://www.360doc.com/content/17/0228/09/1489589_632614503.shtml target=_blank onclick='artStatistics("20-9-7");'>爬虫：Scrapy5</a></span></li>
+</ul>
+</div>
+<div class="bottom_article f_right">
+<div class="str_border">
+<strong>精选文章</strong>
+</div>
+<ul class="barticle_list">
+<li class="j"><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/18/0426/22/37096246_748901745.shtml target="_blank">地下室价格破千万，北京的房价还是搂不住？</a></span></li>
+<li class="j"><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/18/0410/18/46664368_744395189.shtml target="_blank">中国最有仙气的插画师，用柔软的心画出最美的鬼神</a></span></li>
+<li class=""><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0130/18/7181520_263187911.shtml target="_blank">中国历史37位奇女子</a></span></li>
+<li class=""><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/13/0510/01/8729599_284185628.shtml target="_blank">男人请感悟这100条</a></span></li>
+<li class=""><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/12/0811/23/7536829_229590966.shtml target="_blank">美死了！還不快藏！！！</a></span></li>
+<li class=""><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/12/1212/00/10963541_253430058.shtml target="_blank">豆浆的20种做法，收藏吧，随时用得着</a></span></li>
+<li class=""><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/09/1101/00/76281_8161601.shtml target="_blank">看透人生的50个哲学！</a></span></li>
+<li class=""><span><a onclick="artStatistics('20-9-9');" href=http://www.360doc.com/content/14/0210/23/4546179_351370897.shtml target="_blank">纪念邮票欣赏</a></span></li>
+</ul>
+</div>
+</div>
+<div id="divunderad">
+</div>
+<div id="ReflectionPart">
+<div style="height: 156px; margin: 0px 0px;">
+<div class="plbox">
+<div style="padding-left: 6px;">
+<div class="titwx" style="height: 23px; font-size: 16px; font-weight: bold; margin-top: 10px;">
+发表评论<a target="_blank" href="http://www.360doc.com/agreement.html" style="float: right; font-size: 12px; color: #666; font-weight: normal; line-height: 20px; padding-right: 4px;">评论公约</a>
+</div>
+<textarea name="SendRefTB" id="SendRefTB" style="width: 100%; margin-top: 6px; height: 75px; border: 1px solid #e7e7e7; background-color: #fff; overflow: auto; font-size: 12px;" onfocus="testContent(1);" onblur="testContent(2)"></textarea>
+<div style="text-align: right; padding-right: 3px; padding-top: 6px;">
+<div class="huifubt">
+<a id="ImgSendPL" href="javascript:void(0);" onclick="SubmitReflection();"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="padding-top: 15px; padding-left: 15px;" id="Reflction">
+</div>
+</div>
+</div>
+<div class="a_right">
+<div class="user_info">
+<div class="user_photo_new f_left">
+<a href="http://www.360doc.com/userhome/19119980" id="userphotourl" target="_blank" onclick="artStatistics(&#39;20-7-4&#39;);">
+<img src="http://userimage7.360doc.com/16/0112/14/19119980_201601121421190790_main.jpg" id="userphoto" width="58" height="58" />
+</a>
+</div>
+<div class="user_data f_right">
+<div class="user_data_name">
+<a href="http://www.360doc.com/userhome/19119980" id="nickname" target="_blank" onclick="artStatistics(&#39;20-7-3&#39;);">玄冰优</a>
+</div>
+<p id="userdegree"><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar2.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar3.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar3.gif' /></p>
+<div class="user_data_num">
+<a class="user_data_gz" href="javascript:void(0);" id="spanfollowstatusnew">关注</a>
+<script type="text/javascript">isfollow(19119980);</script>
+<a class="user_data_dh" href="javascript:void(0);" onclick="docTalk();artStatistics('20-15');">对话</a>
+</div>
+</div>
+</div>
+<div class="his_her"><ul class='his_her_type'><li class='f_left curone'><a href="http://www.360doc.com/userhome/19119980" style="color:#000;" target="_blank" onclick="artStatistics('20-9-10');">TA的最新馆藏<span class="s1">&nbsp;&nbsp;(共<span id="artnum">108</span>篇)</span></a></li></ul><div class='his_her_div' style="height:190px;"><ul class='his_her_list'><li><div><span></span><a href=http://www.360doc.com/content/17/1108/16/19119980_702099673.shtml target=_blank onclick="artStatistics('20-9-11');">python学习 linux命令-crontab</a></div><div><span></span><a href=http://www.360doc.com/content/17/1108/12/19119980_702020823.shtml target=_blank onclick="artStatistics('20-9-11');">python 学习 matplotlib初级学习</a></div><div><span></span><a href=http://www.360doc.com/content/17/0917/11/19119980_687817681.shtml target=_blank onclick="artStatistics('20-9-11');">iOS开发 ShareSDK各社交平台申请APPkey 的网址及申请流程汇总</a></div><div><span></span><a href=http://www.360doc.com/content/17/0719/14/19119980_672571190.shtml target=_blank onclick="artStatistics('20-9-11');">Python学习 Xcode8.2.1 搭建Python环境</a></div><div><span></span><a href=http://www.360doc.com/content/17/0612/10/19119980_662079162.shtml target=_blank onclick="artStatistics('20-9-11');">iOS开发 UITabBar上小红点</a></div><div><span></span><a href=http://www.360doc.com/content/17/0606/11/19119980_660446616.shtml target=_blank onclick="artStatistics('20-9-11');">iOS 开发 获取链接网络wifi名称</a></div></li></ul></div></div>
+<div class="clear360doc" style="padding-top: 10px; height: 260px;">
+<div id="divifartad1">
+</div>
+<div style="height: 10px;">
+</div>
+</div>
+<div class="his_her" id="recommendArt" style="margin-top: 5px;">
+<div class="str_border" style="margin: 0;">
+<span style="font-size: 14px; float: left;">喜欢该文的人也喜欢</span>
+<a style="float: right;" class="a_more" onclick="artStatistics('20-9-4');" href="http://www.360doc.com/readroom.html" target="_blank">更多</a>
+</div>
+<div class='his_her_div' style="height: 264px;">
+<ul class='his_her_list'>
+<li id="recommendArtLists"></li>
+</ul>
+</div>
+</div>
+<div class="clear360doc" style="padding-top: 10px;" id="divifartad2">
+</div>
+<br />
+<div id="divifartrightsogou">
+</div>
+<div class="clear360doc" id="divad5" style="padding-top: 11px; zoom: 1; width: 300px;">
+<div id="divad4" style="display: none;">
+<div id="divifartad">
+</div>
+<div class="ggwz">
+<a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+</div>
+<div style="height: 13px;">
+</div>
+</div>
+<div style="clear: both; display: none;" id="divad6">
+<div id="adfloatbaidu">
+</div>
+<div class="ggwz" style="left: 25px;">
+<a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+</div>
+<div style="height: 13px;">
+</div>
+</div>
+<div style="height: 75px;">
+</div>
+</div>
+</div>
+</div>
+<p class="clearboth"></p>
+<input type="hidden" id="artid" value="659271925" />
+<input type="hidden" id="docarttitle" value="Python%e5%ad%a6%e4%b9%a0+%e7%88%ac%e8%99%ab%e8%8e%b7%e5%8f%96%e6%95%b0%e6%8d%ae%e5%b9%b6%e6%94%be%e5%88%b0excel" />
+<input type="hidden" id="firstartid" value="659271925" />
+<input type="hidden" id="firstuid" value="19119980" />
+<input type="hidden" id="firstarturl" value="http://www.360doc.com/content/17/0602/13/19119980_659271925.shtml" />
+<input type="hidden" id="oranfirstarturl" value="" />
+<input type="hidden" id="subclassid" value="-1" />
+<input type="hidden" id="recommendart1" value="-1" />
+<input type="hidden" id="recommendart2" value="-1" />
+<input type="hidden" id="isowner" value="False" />
+<input type="hidden" id="original" value="0" />
+<input type="hidden" id="showrewardlist" value="0" />
+<input type="hidden" id="saveruserid" value="19119980" />
+<input type="hidden" id="sourceurl" value="http://www.360doc.com/userhome/19119980" />
+<input type="hidden" id="artreadroomid" value="0" />
+<script src="http://www.360doc.com/js/Statistics/sha1.js?t=2017092101" type="text/javascript"></script>
+<script src="http://www.360doc.com/js/Statistics/addStatistics.js?t=2017101601" type="text/javascript"></script>
+<script src="http://www.360doc.com/js/showarticle.js?t=2018062201" type="text/javascript" charset="utf-8"></script>
+<script>GerLookingUserInfo(1,19119980,1,1,'-1',-1,10,0);OutputSource('http://www.360doc.com/userhome/19119980','');OutputLastNextArt('Linux%e6%93%8d%e4%bd%9c++%e5%b8%b8%e7%94%a8Linux%e6%8c%87%e4%bb%a4','http://www.360doc.com/content/16/1228/11/19119980_618365477.shtml',0);OutputLastNextArt('Python%e5%ad%a6%e4%b9%a0++Xcode8.2.1+%e6%90%ad%e5%bb%baPython%e7%8e%af%e5%a2%83','http://www.360doc.com/content/17/0719/14/19119980_672571190.shtml',1);</script>
+<script type="text/javascript" src="http://www.360doc.com/js/index7/newheader.js?t=2018040902"></script>
+<script src="http://blockart.360doc.com/ajax/getstatusv2.ashx?aid=659271925" type="text/javascript" charset="utf-8" async="async"></script>
+<script type="text/javascript">
+        var baiduImagePlus = {
+            noLogo: true,
+            unionId: 'u2617463',
+            maxMiniAdCount: 0,
+            formList: [{ formId: 10 }]
+        };
+    </script>
+<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/i.js"></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+        "@id": "http://www.360doc.com/content/17/0602/13/19119980_659271925.shtml",
+        "title": "Python学习 爬虫获取数据并放到excel",
+        "pubDate": "2017-06-02T13:39:41"
+    }
+    </script>
+</body>
+</html>

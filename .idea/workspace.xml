@@ -17,11 +17,38 @@
       <file leaf-file-name="360doc-spider.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/360doc-spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="106">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
-                <element signature="e#1#22#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="request.py" pinned="false" current-in-tab="false">
+        <entry file="file://E:/Anaconda/Lib/urllib/request.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="409" column="30" lean-forward="true" selection-start-line="409" selection-start-column="30" selection-end-line="409" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.py" pinned="false" current-in-tab="false">
+        <entry file="file://E:/Anaconda/pkgs/pandas-0.23.0-py36h830ac7b_0/Lib/site-packages/pandas/core/strings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="2751" column="4" selection-start-line="2751" selection-start-column="4" selection-end-line="2751" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-397846828/builtins.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="2819" column="8" selection-start-line="2819" selection-start-column="8" selection-end-line="2819" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -29,8 +56,8 @@
       <file leaf-file-name="expression.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/PycharmProjects/expression/expression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="114">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -75,8 +102,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="57" />
-    <option name="y" value="22" />
+    <option name="x" value="82" />
+    <option name="y" value="155" />
     <option name="width" value="1750" />
     <option name="height" value="969" />
   </component>
@@ -108,6 +135,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="request&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
@@ -129,7 +157,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.expression">
+  <component name="RunManager" selected="Python.360doc-spider">
     <configuration name="360doc-spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="360doc-spider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -191,8 +219,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.expression" />
         <item itemvalue="Python.360doc-spider" />
+        <item itemvalue="Python.expression" />
         <item itemvalue="Python.hello world" />
         <item itemvalue="Python.360doc-spider" />
       </list>
@@ -212,15 +240,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="18" width="1400" height="775" extended-state="0" />
-    <editor active="true" />
+    <frame x="66" y="124" width="1400" height="775" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963924" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.27633476" side_tool="true" visible="true" weight="0.32829046" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.72366524" visible="true" weight="0.32829046" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.27705628" side_tool="true" visible="true" weight="0.44780636" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7229437" visible="true" weight="0.44780636" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -252,7 +279,7 @@
         <state relative-caret-position="247">
           <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
           <folding>
-            <element signature="e#1#22#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -266,17 +293,48 @@
     </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/expression/expression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="114">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Anaconda/pkgs/urllib3-1.22-py36h276f60a_0/Lib/site-packages/urllib3/util/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1273">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-397846828/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="2819" column="8" selection-start-line="2819" selection-start-column="8" selection-end-line="2819" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Anaconda/pkgs/pandas-0.23.0-py36h830ac7b_0/Lib/site-packages/pandas/core/strings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="2751" column="4" selection-start-line="2751" selection-start-column="4" selection-end-line="2751" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Anaconda/Lib/urllib/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="409" column="30" lean-forward="true" selection-start-line="409" selection-start-column="30" selection-end-line="409" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/360doc-spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="106">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
-            <element signature="e#1#22#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
