@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
-from selenium import webdriver  #导入Selenium的webdriver
-from selenium.webdriver.common.keys import Keys  #导入Keys
+from selenium import webdriver  # 导入Selenium的webdriver
+from selenium.webdriver.common.keys import Keys  # 导入Keys
 import time
 
 url='http://www.360doc.com/userhome/27905781'

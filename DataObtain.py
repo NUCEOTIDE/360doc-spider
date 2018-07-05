@@ -7,9 +7,14 @@ from selenium import webdriver  # 导入Selenium的webdriver
 #  默认url按照每次访问从rulList中取得的值修改
 url='https://www.baidu.com'
 driver=None
-years=0
+years=''
 response=''
 order=1
+moduleAddress=os.path.abspath(__file__)
+urlFolder=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+"\\"+"urlList"+"\\"
+# 本机地址 r"C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\urlList"+"\\"
+
+
 
 def request_initial(new_url):
 	global url, driver
@@ -27,7 +32,7 @@ def requests():
 	try:
 		driver.get(url)
 		response=driver.page_source
-		print('{} {}data obtaining complete'.format(years,order))
+		print('{}-{} data obtaining complete'.format(years,order))
 		order+=1
 	finally:
 		driver.close()
@@ -36,9 +41,12 @@ def requests():
 
 def dataObtain(new_years):
 	global years,response
-	urlFile=open("urlList"+str(new_years)+".txt")  # 文件命名方式‘urlList’+年份，txt格式
+	# 从位于此地址的urlFolder中查找相关年份的list
+	# print(urlFolder)
+	urlFile=open(urlFolder+"urlList"+str(new_years)+".txt")  # 文件命名方式‘urlList’+年份，txt格式
 	years=new_years
-	targetDir=r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\{}'.format(years)
+	targetDir=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\{}'.format(years)
+	# 本机地址 r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\{}'.format(years)
 	# 如果子目录尚不存在则创建一个
 	if not os.path.exists(targetDir):
 		os.mkdir(targetDir)
@@ -46,8 +54,9 @@ def dataObtain(new_years):
 	for urlLine in urlFile.readlines():  # 如果文件读取完毕，结束循环
 		new_url=urlLine  # 从urlList文件中一行行读取目标网址
 		request_initial(new_url)
+		print(targetDir)
 		DataPorcess.dataProcess(requests(),targetDir)
 	print('data obtaining&processing completed')
 
 
-print(dataObtain(2013))  # 测试代码
+print(dataObtain('2013'))  # 测试代码
