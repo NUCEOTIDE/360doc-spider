@@ -1,5 +1,5 @@
 import os
-import DataPorcess
+import DataProcess
 from selenium import webdriver  # 导入Selenium的webdriver
 
 
@@ -13,7 +13,6 @@ order=1
 moduleAddress=os.path.abspath(__file__)
 urlFolder=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+"\\"+"urlList"+"\\"
 # 本机地址 r"C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\urlList"+"\\"
-
 
 
 def request_initial(new_url):
@@ -34,6 +33,8 @@ def requests():
 		response=driver.page_source
 		print('{}-{} data obtaining complete'.format(years,order))
 		order+=1
+	except TimeoutError:
+		pass
 	finally:
 		driver.close()
 		return response
@@ -43,20 +44,23 @@ def dataObtain(new_years):
 	global years,response
 	# 从位于此地址的urlFolder中查找相关年份的list
 	# print(urlFolder)
-	urlFile=open(urlFolder+"urlList"+str(new_years)+".txt")  # 文件命名方式‘urlList’+年份，txt格式
 	years=new_years
-	targetDir=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\{}'.format(years)
-	# 本机地址 r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\{}'.format(years)
-	# 如果子目录尚不存在则创建一个
-	if not os.path.exists(targetDir):
-		os.mkdir(targetDir)
-		print('Successfully created directory', targetDir)
+	try:
+		urlFile=open(urlFolder+"urlList"+str(years)+".txt")  # 文件命名方式‘urlList’+年份，txt格式
+		targetDir=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\'+'rawFile'+'\\{}'.format(years)
+		# 本机地址 r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\rawFile\{}'.format(years)
+	except FileNotFoundError:
+		print('指定路径不存在，将创建指定路径')
+		# 如果子目录尚不存在则创建一个
+		if not os.path.exists(targetDir):
+			os.mkdir(targetDir)
+			print('Successfully created directory', targetDir)
 	for urlLine in urlFile.readlines():  # 如果文件读取完毕，结束循环
 		new_url=urlLine  # 从urlList文件中一行行读取目标网址
 		request_initial(new_url)
 		print(targetDir)
-		DataPorcess.dataProcess(requests(),targetDir)
+		DataProcess.dataProcess(requests(),targetDir)
 	print('data obtaining&processing completed')
 
 
-print(dataObtain('2013'))  # 测试代码
+# print(dataObtain('2013'))  # 测试代码

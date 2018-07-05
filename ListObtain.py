@@ -56,5 +56,3 @@ def listObtain():
 	pageSource=dynamicRequests()
 	dataProcess(pageSource)
 
-
-print(listObtain())

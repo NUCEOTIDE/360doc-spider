@@ -6,8 +6,10 @@ def dataProcess(pageSource,fileAddress):
 	contentString='@'  # 特殊标识文件以@形式开启
 	table=pageSource_soup.find_all('table')[1]  # 由于需求信息存在于网页的ta_name为table的内容下，专门搜索本内容
 	#  print(table)
-	if table.attrs['id']=='table7961':
-		for line in table.find_all('td'):
+	for line in table.find_all('td'):
+		if line.get_text()=='同时发行':
+			break
+		else:
 			contentString+=line.get_text()+'~'
 		print('target content in string')
 	else:
@@ -16,7 +18,7 @@ def dataProcess(pageSource,fileAddress):
 	file=open(fileAddress+"\\"+fileName+'.txt',mode='w',encoding='utf-8')
 	file.write(contentString)
 	file.close()
-	return contentString
+	return
 
 
 #  print(dataProcess(html_doc))

@@ -1,7 +1,7 @@
 import os
 import DataObtain
 import DataOutput
-import DataPorcess
+import DataProcess
 import ListObtain
 
 mainModuleAddress=os.path.abspath(__file__)
@@ -12,4 +12,5 @@ rawAdress=mainModuleAddress[:mainModuleAddress.find(r'\360doc-spider.py')]
 
 
 #  正式访问
-print(DataObtain.dataObtain(2016))
+# DataObtain.dataObtain('2016')
+DataOutput.dataOutput('邮票整理结果(8)')
