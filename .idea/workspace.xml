@@ -29,7 +29,7 @@
       <file leaf-file-name="ListObtain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListObtain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
+            <state relative-caret-position="779">
               <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataObtain.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DataObtain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DataObtain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+            <state relative-caret-position="152">
+              <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -50,11 +50,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataProcess.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataProcess.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataProcess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+            <state relative-caret-position="190">
+              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,7 +65,7 @@
       <file leaf-file-name="DataOutput.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataOutput.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="-589">
               <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -89,13 +92,13 @@
         <option value="$USER_HOME$/PycharmProjects/helloWorld/hello world.py" />
         <option value="$USER_HOME$/PycharmProjects/expression/expression.py" />
         <option value="$USER_HOME$/PycharmProjects/expression/hahah.py" />
-        <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/DataPorcess.py" />
         <option value="$PROJECT_DIR$/360doc-spider.py" />
         <option value="$PROJECT_DIR$/ListObtain.py" />
         <option value="$PROJECT_DIR$/DataOutput.py" />
-        <option value="$PROJECT_DIR$/DataProcess.py" />
         <option value="$PROJECT_DIR$/DataObtain.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/DataProcess.py" />
       </list>
     </option>
   </component>
@@ -209,7 +212,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="DataOutput" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="DataProcess" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="360doc-spider" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -221,25 +224,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataOutput.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="DataPorcess" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="360doc-spider" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\DataProcess.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataProcess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -263,20 +248,38 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="360doc-spider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.DataObtain" />
       <item itemvalue="Python.ListObtain" />
-      <item itemvalue="Python.DataPorcess" />
-      <item itemvalue="Python.DataOutput" />
       <item itemvalue="Python.360doc-spider" />
+      <item itemvalue="Python.DataProcess" />
+      <item itemvalue="Python.Test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.DataObtain" />
+        <item itemvalue="Python.Test" />
+        <item itemvalue="Python.DataProcess" />
         <item itemvalue="Python.ListObtain" />
         <item itemvalue="Python.360doc-spider" />
-        <item itemvalue="Python.DataOutput" />
-        <item itemvalue="Python.DataPorcess" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +333,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/PycharmProjects/expression/hahah.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -601,13 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/expression/expression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/Anaconda/pkgs/urllib3-1.22-py36h276f60a_0/Lib/site-packages/urllib3/util/request.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-397846828/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -618,20 +620,6 @@
     </entry>
     <entry file="file://E:/Anaconda/pkgs/pandas-0.23.0-py36h830ac7b_0/Lib/site-packages/pandas/core/strings.py" />
     <entry file="file://E:/Anaconda/Lib/urllib/request.py" />
-    <entry file="file://$USER_HOME$/PycharmProjects/expression/hahah.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/Anaconda3/Lib/site-packages/xlsxwriter/workbook.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-266">
@@ -649,19 +637,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListObtain.py">
+    <entry file="file://$USER_HOME$/PycharmProjects/expression/expression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/expression/hahah.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataOutput.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="-589">
           <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
@@ -669,20 +661,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataObtain.py">
+    <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+        <state relative-caret-position="228">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListObtain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        <state relative-caret-position="190">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataObtain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

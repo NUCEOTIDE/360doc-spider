@@ -23,21 +23,33 @@ def dataObtain(new_years):
 	try:
 		# 从位于此地址的urlFolder中查找相关年份的list
 		urlFile=open(urlFolder+"urlList"+str(years)+".txt")   # 文件命名方式‘urlList’+年份，txt格式
-		targetDir=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\'+'rawFile'+'\\{}'.format(years)
+		targetDir_text=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\'+'rawFile'+'\\{}'.format(years)
 		# 本机地址 r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\rawFile\{}'.format(years)
-	except FileNotFoundError:
-		print('指定路径不存在，将创建指定路径')
+		targetDir_pics=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\'+'rawPics'+'\\{}'.format(years)
+		# 本机地址 r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\rawPics\{}'.format(years)
 		# 如果子目录尚不存在则创建一个
-		if not os.path.exists(os.path.dirname(targetDir)):
-			os.mkdir(os.path.dirname(targetDir))
-			print('成功创建路径',os.path.dirname(targetDir))
-		if not os.path.exists(targetDir):
-			os.mkdir(targetDir)
-			print('成功创建路径',targetDir)
+		if not os.path.exists(os.path.dirname(targetDir_text)):
+			print('指定文件保存路径不存在，将创建指定路径')
+			os.mkdir(os.path.dirname(targetDir_text))
+			print('成功创建路径',os.path.dirname(targetDir_text))
+		if not os.path.exists(os.path.dirname(targetDir_pics)):
+			print('指定图片保存路径不存在，将创建指定路径')
+			os.mkdir(os.path.dirname(targetDir_pics))
+			print('成功创建路径',os.path.dirname(targetDir_pics))
+		if not os.path.exists(targetDir_text):
+			print('指定文件年份路径不存在，将创建指定路径')
+			os.mkdir(targetDir_text)
+			print('成功创建路径',targetDir_text)
+		if not os.path.exists(targetDir_pics):
+			print('指定图片年份路径不存在，将创建指定路径')
+			os.mkdir(targetDir_pics)
+			print('成功创建路径', targetDir_pics)
+	except FileNotFoundError:
+		print('无法创建路径')
 	for urlLine in urlFile.readlines():  # 如果文件读取完毕，结束循环
 		new_url=urlLine  # 从urlList文件中一行行读取目标网址
 		request_initial(new_url)
-		DataProcess.dataProcess(requests(),targetDir)
+		DataProcess.dataProcess(requests(),targetDir_text,targetDir_pics)
 	print('数据获取并处理成功')
 
 
