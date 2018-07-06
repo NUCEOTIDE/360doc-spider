@@ -3,35 +3,63 @@ import DataProcess
 from selenium import webdriver  # 导入Selenium的webdriver
 
 
-#  默认header一般不做修改如要修改直接改以下文本
-#  默认url按照每次访问从rulList中取得的值修改
-url='https://www.baidu.com'
-driver=None
-years=''
-response=''
+url='https://www.baidu.com'  # 默认url按照每次访问从rulList中取得的值修改
+driver=None  # 初始driver,实际根据驱动可在Chrome与phantomJS以及其它支持浏览器间切换
+years=''  # 初始年份变量
+response=''  # 初始页面信息
 order=1
 moduleAddress=os.path.abspath(__file__)
-urlFolder=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+"\\"+"urlList"+"\\"
+urlFolder=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+"\\"+"urlList"+"\\"  # 默认链接列表文件夹地址
 # 本机地址 r"C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\urlList"+"\\"
 
 
+def dataObtain(new_years):
+	'''通过访问位于项目文件夹r'360doc-spider\\urlList\\'内部的相关年份的链接列表。
+	依次访问网页完成下载，把原始数据保存通过调用DataProcess处理
+	保存至r'360doc-spider\\rawFile\\xxxx\\'中的txt文件中'''
+
+	global years,response
+	years=new_years
+	try:
+		# 从位于此地址的urlFolder中查找相关年份的list
+		urlFile=open(urlFolder+"urlList"+str(years)+".txt")   # 文件命名方式‘urlList’+年份，txt格式
+		targetDir=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\'+'rawFile'+'\\{}'.format(years)
+		# 本机地址 r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\rawFile\{}'.format(years)
+	except FileNotFoundError:
+		print('指定路径不存在，将创建指定路径')
+		# 如果子目录尚不存在则创建一个
+		if not os.path.exists(os.path.dirname(targetDir)):
+			os.mkdir(os.path.dirname(targetDir))
+			print('成功创建路径',os.path.dirname(targetDir))
+		if not os.path.exists(targetDir):
+			os.mkdir(targetDir)
+			print('成功创建路径',targetDir)
+	for urlLine in urlFile.readlines():  # 如果文件读取完毕，结束循环
+		new_url=urlLine  # 从urlList文件中一行行读取目标网址
+		request_initial(new_url)
+		DataProcess.dataProcess(requests(),targetDir)
+	print('数据获取并处理成功')
+
+
 def request_initial(new_url):
+	'''初始化浏览器'''
 	global url, driver
 	try:
 		url=new_url  # 目标url地址
 		driver=webdriver.Chrome()  # 初始化浏览器，使用Chrome测试。完成时使用PhantomJS提高速度
 	except ValueError:
-		print('错误的url，或者url不存在')
+		print('错误的url，或者url不存在 ')
 	finally:
 		return
 
 
 def requests():
+	'''访问目标页面'''
 	global url,driver,years,response,order
 	try:
 		driver.get(url)
 		response=driver.page_source
-		print('{}-{} data obtaining complete'.format(years,order))
+		print('{}-{} 数据获取成功 '.format(years,order))
 		order+=1
 	except TimeoutError:
 		pass
@@ -40,27 +68,4 @@ def requests():
 		return response
 
 
-def dataObtain(new_years):
-	global years,response
-	# 从位于此地址的urlFolder中查找相关年份的list
-	# print(urlFolder)
-	years=new_years
-	try:
-		urlFile=open(urlFolder+"urlList"+str(years)+".txt")  # 文件命名方式‘urlList’+年份，txt格式
-		targetDir=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+'\\'+'rawFile'+'\\{}'.format(years)
-		# 本机地址 r'C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\rawFile\{}'.format(years)
-	except FileNotFoundError:
-		print('指定路径不存在，将创建指定路径')
-		# 如果子目录尚不存在则创建一个
-		if not os.path.exists(targetDir):
-			os.mkdir(targetDir)
-			print('Successfully created directory', targetDir)
-	for urlLine in urlFile.readlines():  # 如果文件读取完毕，结束循环
-		new_url=urlLine  # 从urlList文件中一行行读取目标网址
-		request_initial(new_url)
-		print(targetDir)
-		DataProcess.dataProcess(requests(),targetDir)
-	print('data obtaining&processing completed')
-
-
-# print(dataObtain('2013'))  # 测试代码
+print(dataObtain('2013'))  # 测试代码

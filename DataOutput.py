@@ -18,18 +18,18 @@ def dataOutput(workbook_name):
 		print(rawDataFolder)
 		for fn in os.listdir(rawFileAddress+'\\'+rawDataFolder):  # fn 表示的是文件名
 			fileNumber+=1
-		print('file number=',fileNumber)
+		print('文件数量=',fileNumber)
 		worksheet=workbook.add_worksheet(rawDataFolder)
 		for rawDataFile in os.listdir(rawFileAddress+'\\'+rawDataFolder):
 			print(rawDataFile)
 			rawData=open(rawFileAddress+'\\'+rawDataFolder+'\\'+rawDataFile,mode='r',encoding='utf-8')
 			rawData=rawData.read()
 			character=rawData.split('~')
-			print(character[1])
 			rowIndentStr=re.sub("\D","",character[1])  # 获得一版邮票有几张的信息
 			for partialIndent in rowIndentStr:
-				print(partialIndent)
 				rowIndent+=int(partialIndent)
+			if rowIndentStr[0:1]!=rowIndent:
+				print('共{}枚/张'.format(rowIndent))
 			# print(rowIndent)
 			# rowIndent=filter(str.isdigit,character[1])
 			startRow=mergeANDwrite(worksheet,character,rawDataFile)
