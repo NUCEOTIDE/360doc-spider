@@ -20,7 +20,7 @@ def dataProcess(pageSource,fileAddress,new_years):
 	years=new_years
 	pageSource_soup=BeautifulSoup(pageSource,'lxml')  # 将获取的网页信息保存成BeautifulSoup对象
 	find_text(fileAddress)
-	# find_picture(fileAddress)
+	find_picture(fileAddress)
 	return
 
 

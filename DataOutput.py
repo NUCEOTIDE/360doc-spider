@@ -12,21 +12,24 @@ rowIndent=0
 
 
 def dataOutput(workbook_name):
+	'''使用xlsxwriter创建新Excel文档，将rawDataFile中的原始数据保存'''
+
 	global worksheet,row,rowIndent,startRow,fileNumber
-	workbook=xlsxwriter.Workbook(workbook_name+'.xlsx')
-	for rawDataFolder in os.listdir(rawFileAddress):
+	workbook=xlsxwriter.Workbook(workbook_name+'.xlsx')  # 新建Excel workbook
+	for rawDataFolder in os.listdir(rawFileAddress):  # 顺序访问rawDataFolder文件夹，读取年份文件夹数量与信息
 		print(rawDataFolder)
-		for fn in os.listdir(rawFileAddress+'\\'+rawDataFolder):  # fn 表示的是文件名
+		for fn in os.listdir(rawFileAddress+'\\'+rawDataFolder):  # 获取年份文件夹中rawDataFile文件数量信息
 			fileNumber+=1
 		print('文件数量=',fileNumber)
-		worksheet=workbook.add_worksheet(rawDataFolder)
-		for rawDataFile in os.listdir(rawFileAddress+'\\'+rawDataFolder):
+		worksheet=workbook.add_worksheet(rawDataFolder)  # 根据其中的文件名（年份）建立标签页
+		for rawDataFile in os.listdir(rawFileAddress+'\\'+rawDataFolder):  # 获取年份文件夹中rawDataFile文件信息
 			print(rawDataFile)
+			# 打开相应文件
 			rawData=open(rawFileAddress+'\\'+rawDataFolder+'\\'+rawDataFile,mode='r',encoding='utf-8')
 			rawData=rawData.read()
-			character=rawData.split('~')
+			character=rawData.split('~')  # 按照事先规定的分隔符将原始数据输出成为列表
 			rowIndentStr=re.sub("\D","",character[1])  # 获得一版邮票有几张的信息
-			for partialIndent in rowIndentStr:
+			for partialIndent in rowIndentStr:  # 获取邮票总张数，方便得知
 				rowIndent+=int(partialIndent)
 			if rowIndentStr[0:1]!=rowIndent:
 				print('共{}枚/张'.format(rowIndent))
@@ -41,6 +44,7 @@ def dataOutput(workbook_name):
 
 
 def mergeANDwrite(worksheet,character,rawDataFile):
+	'''合并单元格，写入数据'''
 	#  merge_range(first_row, first_col, last_row, last_col, data[, cell_format])
 	#  row:一列中x位； col:一行中x位
 
@@ -51,8 +55,6 @@ def mergeANDwrite(worksheet,character,rawDataFile):
 	# ~摄 影 者~ ~整版枚数~16枚（4枚连印，4套）~原画作者~ 
 	# ~资料提供~上海博物馆、四川博物院、浙江省博物馆、国家图书馆、审计博物馆~整张规格~190×180毫米~雕 刻 者~ 
 	# ~单枚信息~(此为第37个信息,[36])
-
-
 	global row,col,currentRowCount
 	for currentRow in range(startRow,startRow+11+rowIndent):
 		if currentRow-startRow==0:
@@ -107,5 +109,5 @@ def mergeANDwrite(worksheet,character,rawDataFile):
 	return startRow+10+rowIndent
 
 
-#  dataOutput('邮票整理结果')
+dataOutput('邮票整理结果')
 #  print("get pathname:",os.path.dirname(r"C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\urlList"))

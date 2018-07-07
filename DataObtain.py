@@ -80,4 +80,4 @@ def requests():
 		return response
 
 
-print(dataObtain('2013'))  # 测试代码
+#print(dataObtain('2013'))  # 测试代码
