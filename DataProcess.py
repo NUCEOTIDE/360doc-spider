@@ -15,13 +15,14 @@ header={
 
 def dataProcess(pageSource,fileAddress,new_years):
 	'''处理保存在字符串中的原始数据，输出数据保存在txt格式文件中'''
-
+	if pageSource==-1:
+		return -1
 	global isObtained,pageSource_soup,years
 	years=new_years
 	pageSource_soup=BeautifulSoup(pageSource,'lxml')  # 将获取的网页信息保存成BeautifulSoup对象
 	find_text(fileAddress)
 	find_picture(fileAddress)
-	return
+	return 1
 
 
 def find_picture(picAddress):

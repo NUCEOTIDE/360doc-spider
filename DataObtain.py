@@ -8,6 +8,7 @@ driver=None  # 初始driver,实际根据驱动可在Chrome与phantomJS以及其�
 years=''  # 初始年份变量
 response=''  # 初始页面信息
 order=1
+isFailed=0
 moduleAddress=os.path.abspath(__file__)
 urlFolder=moduleAddress[:moduleAddress.find(r'\DataObtain.py')]+"\\"+"urlList"+"\\"  # 默认链接列表文件夹地址
 # 本机地址 r"C:\Users\user\Desktop\FTC\2018个人项目\数据爬虫\360doc-spider\urlList"+"\\"
@@ -18,7 +19,7 @@ def dataObtain(new_years):
 	依次访问网页完成下载，把原始数据保存通过调用DataProcess处理
 	保存至r'360doc-spider\\rawFile\\xxxx\\'中的txt文件中'''
 
-	global years,response
+	global years,response,isFailed
 	years=new_years
 	try:
 		# 从位于此地址的urlFolder中查找相关年份的list
@@ -49,8 +50,22 @@ def dataObtain(new_years):
 	for urlLine in urlFile.readlines():  # 如果文件读取完毕，结束循环
 		new_url=urlLine  # 从urlList文件中一行行读取目标网址
 		request_initial(new_url)
-		DataProcess.dataProcess(requests(),targetDir_text,targetDir_pics)
-	print('数据获取并处理成功')
+		isFailed=DataProcess.dataProcess(requests(),targetDir_text,targetDir_pics)
+		if isFailed==1:
+			continue
+		elif isFailed==-1:
+			print('由于page_source获取失败，数据处理失败')
+			break
+	try:
+		if isFailed==-1:
+			print('数据获取并处理失败')
+			return -1
+		elif isFailed==1:
+			print('数据获取并处理成功')
+			return 1
+	except isFailed==0:
+		print('未知错误')
+		return 0
 
 
 def request_initial(new_url):
@@ -71,13 +86,17 @@ def requests():
 	try:
 		driver.get(url)
 		response=driver.page_source
-		print('{}-{} 数据获取成功 '.format(years,order))
-		order+=1
+		if response is None:
+			response=-1
+		elif response is not None:
+			print('{}-{} 数据获取成功 '.format(years,order))
+			order+=1
 	except TimeoutError:
-		pass
+		print('请求失败，请检查网络连接')
+		response=-1
 	finally:
 		driver.close()
 		return response
 
 
-#print(dataObtain('2013'))  # 测试代码
+print(dataObtain('2013'))  # 测试代码
